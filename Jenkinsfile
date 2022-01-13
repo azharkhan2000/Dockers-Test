@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         AWS_ACCOUNT_ID="678878256416"
-        AWS_DEFAULT_REGION="us-east-1"
+        AWS_DEFAULT_REGION="us-east-1" 
         IMAGE_REPO_NAME="azhar-jenkins"
         IMAGE_TAG="Latest"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
