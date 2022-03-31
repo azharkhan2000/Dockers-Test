@@ -3,7 +3,7 @@ pipeline {
     environment {
         AWS_ACCOUNT_ID="678878256416"
         AWS_DEFAULT_REGION="us-east-1" 
-        IMAGE_REPO_NAME="azhar-jenkins"
+        IMAGE_REPO_NAME="jenkins_pipeline_build_demo"
         IMAGE_TAG="Latest"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
@@ -21,7 +21,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/azharkhan2000/Dockers-Test.git']]])     
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/azharkhan2000/Dockers-Test']]])     
             }
         }
   
